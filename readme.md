@@ -18,6 +18,7 @@ Yo soy Kevin Castillo, soy estudiante de ingenieria en sistemas y decidi dedicar
 - nodemailer
 - passport
 - passport-local
+- Socket.io
 
 # El proyecto en profundidad
 ## Descripcion detallada
@@ -92,3 +93,6 @@ Permite mostrar todas las ordenes asociadas a ese mail, las cuales presentaran t
 #### post /
 Permite guardar una orden en la BD, la cual se genera con un estado por defecto de generada, y toma todos los datos del carrito para crearse
 Por si solo no recibe ningun parametro, pero requiere de que el carrito de un usuario posea al menos 1 producto, y que se haya especificado alguna direccion para hacer la entrega
+### Chat
+#### get /
+Renderiza una pagina basica la cual muestra un chat desde el que se envia un mensaje por el chat, luego ese mensaje se guarda en la base de datos correspondiente con la informacion del usuario, la fecha de creacion, el tipo de usuario, si es un usuario o es un usuario correspondiente al sistema, todo esto manejado a traves de los sockets
