@@ -9,7 +9,7 @@ dotenv.config(
 
 export default {
   URLMONGODB : process.env.URLMONGODB,
-  PORT: process.env.PORT,
+  PORT: process.env.PORT || 8080,
   SECRETSESSION: process.env.SECRETSESSION,
   GMAIL_ADDRESS: process.env.GMAIL_ADDRESS,
   GMAIL_PASS: process.env.GMAIL_PASS,

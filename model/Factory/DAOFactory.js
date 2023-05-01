@@ -1,7 +1,7 @@
 import CarritosDAO from "../DAOS/CarritosDAO.js";
 import productosDAO from "../DAOS/ProductosDAO.js";
 import UsuariosDAO from "../DAOS/UsuariosDAO.js";
-import OrdenesDAO from "../DAOS/ordenesDAO.js";
+import OrdenesDAO from "../DAOS/OrdenesDAO.js";
 import MensajesDAO from "../DAOS/MensajesDAO.js";
 
 export default class DAOFactory{
