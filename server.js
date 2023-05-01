@@ -29,6 +29,8 @@ conexionMDB
 
 const app = express()
 const httpServer = createServer(app)
+
+//Inicio de IO
 const io = new Server(httpServer)
 
 levantarIOMensajes(io)
