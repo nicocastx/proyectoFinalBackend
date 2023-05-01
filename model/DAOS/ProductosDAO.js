@@ -1,6 +1,6 @@
 import mongoose from "mongoose"
 import productosModel from "../schemas/Producto.js"
-import formatDTO from "../DTOS/productosDTO.js"
+import formatDTO from "../DTOS/ProductosDTO.js"
 import logger from "../../config/logger.js"
 
 export default class productosDAO {
