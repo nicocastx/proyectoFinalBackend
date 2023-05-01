@@ -24,12 +24,10 @@ passport.deserializeUser(async (username, done) => {
 export default {
   register: passport.authenticate('register', {
     failureRedirect: '/',
-    successRedirect: '/productos',
-    failureFlash: true
+    successRedirect: '/productos'
   }),
   login: passport.authenticate('login', {
     failureRedirect: '/',
-    successRedirect: '/productos',
-    failureFlash: true
+    successRedirect: '/productos'
   })
 }

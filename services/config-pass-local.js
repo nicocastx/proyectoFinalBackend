@@ -54,12 +54,12 @@ const loginStrategy = new localStrategy(
 
     if (!usuario) {
       console.log('No existe el usuario elegido');
-      return done(null, false, {message: 'El correo electronico no esta registrado, verifique si esta correctamente ingresado o registrese'})
+      return done(null, false)
     }
 
     if (!validPassword(usuario, password)) {
       console.log('La contraseña es invalida, Intente Nuevamente');
-      return done(null, false, {message: 'La contraseña ingresada no es correcta, intente nuevamente'})
+      return done(null, false)
     }
 
     return done(null, usuario)

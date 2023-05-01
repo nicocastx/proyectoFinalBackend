@@ -13,5 +13,5 @@ export default {
   SECRETSESSION: process.env.SECRETSESSION,
   GMAIL_ADDRESS: process.env.GMAIL_ADDRESS,
   GMAIL_PASS: process.env.GMAIL_PASS,
-  NODE_ENV: process.env.NODE_ENV
+  NODE_ENV: process.env.NODE_ENV,
 }

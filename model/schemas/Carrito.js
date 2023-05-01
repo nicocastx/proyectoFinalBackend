@@ -2,7 +2,7 @@ import { Schema, model } from "mongoose";
 
 const colName = 'Carritos'
 
-const colSchema = Schema({
+const colSchema = new Schema({
   email: {type: String, required: true},
   fechaHoraCreacion: {type: String, required: true},
   items: [

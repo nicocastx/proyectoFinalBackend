@@ -1,0 +1,37 @@
+<div id="chatContainer">
+    <section style="background-color: #eee;">
+        <div class="container py-5">
+
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-16 col-lg-12 col-xl-8">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between align-items-center p-3"
+                            style="border-top: 4px solid #ffa900;">
+                            <h5 class="mb-0">Chat messages - Estas usando como: {{email}}, {{alias}}</h5>
+                            <div class="d-flex flex-row align-items-center">
+                                <i class="fas fa-minus me-3 text-muted fa-xs"></i>
+                                <i class="fas fa-comments me-3 text-muted fa-xs"></i>
+                                <i class="fas fa-times text-muted fa-xs"></i>
+                            </div>
+                        </div>
+                        <div id="msjContainer" class="card-body overflow-auto" data-mdb-perfect-scrollbar="true"
+                            style="position: relative; height: 400px">
+                        </div>
+                            <div class="input-group mb-0">
+                                <input id="text" type="text" class="form-control" placeholder="Ingrese su mensaje"
+                                    aria-describedby="button-addon2" />
+                                <button class="btn btn-warning" onclick="return agregarMensaje()" type="button"
+                                    id="button-addon2" style="padding-top: .55rem;">
+                                    Enviar Mensaje
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<div data-email="{{email}}"></div>
+
+<script src="/mensajes.js"></script>

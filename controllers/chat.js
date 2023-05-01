@@ -1,7 +1,6 @@
-import services from '../services/chat.js'
-
 async function renderMensajes(req, res){
-  res.render('chat')
+  const usuario = req.session.passport.user
+  res.render('chat', usuario)
 }
 
 export default {
