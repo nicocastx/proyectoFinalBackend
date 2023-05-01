@@ -7,6 +7,7 @@
 import {Strategy as localStrategy} from 'passport-local'
 import bcrypt from 'bcrypt'
 import usuariosRepo from '../model/Repos/usuariosRepo.js'
+import nodemailer from './nodemailer.js'
 
 const db = new usuariosRepo()
 
@@ -42,6 +43,7 @@ const registerStrategy = new localStrategy(
 
     await db.agregarUsuario(newUser)
     console.log('Se creo el usuario');
+    nodemailer.gmailRegistro(newUser)
     return done(null, newUser)
   })
 

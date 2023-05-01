@@ -5,8 +5,12 @@ const router = new Router()
 
 router.get('/', controller.getCarritoPorEmail)
 
-router.post('/:idProducto', controller.agregarProductoCarrito)
-
 router.delete('/', controller.eliminarCarrito)
 
-router.delete('/:idProducto', controller.eliminarProductoCarrito)
+router.put('/', controller.modificarDireccionCarrito)
+
+router.post('/:idProducto', controller.guardarItemCarrito)
+
+router.delete('/:idProducto', controller.eliminarItemCarrito)
+
+export default router

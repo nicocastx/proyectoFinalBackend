@@ -11,4 +11,6 @@ router.get('/register', controller.getRegister)
 
 router.post('/register', controller.register)
 
+router.get('/logout', controller.logout)
+
 export default router

@@ -1,6 +1,7 @@
 import CarritosDAO from "../DAOS/CarritosDAO.js";
 import productosDAO from "../DAOS/ProductosDAO.js";
 import UsuariosDAO from "../DAOS/UsuariosDAO.js";
+import OrdenesDAO from "../DAOS/ordenesDAO.js";
 
 export default class DAOFactory{
   static dao
@@ -15,6 +16,10 @@ export default class DAOFactory{
         break
       case 'carritos':
         dao = new CarritosDAO()
+        break
+      case 'ordenes':
+        dao = new OrdenesDAO()
+        break
     }
     return dao
   }

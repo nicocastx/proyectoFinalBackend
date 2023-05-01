@@ -3,7 +3,7 @@ import formatDTO from "../DTOS/CarritosDTO.js";
 import productosDAO from './ProductosDAO.js'
 
 export default class CarritosDAO {
-  //matodos asociados al manejo del carrito
+  //metodos asociados al manejo del carrito
   async getCarritoPorEmail(email) {
     const carrito = await modelCarritos.find({ email: email })
     if (!carrito[0]) {
@@ -14,7 +14,7 @@ export default class CarritosDAO {
     return formatDTO(carrito[0])
   }
 
-  async guardarCarrito(email, direccion) {
+  async guardarCarrito(email) {
     const carrito = await this.getCarritoPorEmail(email)
     if (carrito.error == undefined) {
       console.log('ya existe un carrito asociado a esa cuenta');
@@ -22,9 +22,9 @@ export default class CarritosDAO {
     }
     const carritoGuardado = await modelCarritos.insertMany({
       email: email,
-      fechaHoraCreacion: Date.now().toLocaleString(),
+      fechaHoraCreacion: new Date().toLocaleString(),
       items: [],
-      direccion: direccion
+      direccion: ''
     })
     return formatDTO(carritoGuardado)
   }
@@ -32,9 +32,7 @@ export default class CarritosDAO {
   async eliminarCarrito(email) {
     const carritoEliminado = await modelCarritos.deleteOne({ email: email })
     if (!carritoEliminado) {
-      return {
-        error: 'El carrito solicitado no existe'
-      }
+      return false
     }
     return true
   }

@@ -9,6 +9,9 @@ import passport from 'passport'
 //Rutas
 import routerLogin from "./routes/login.js"
 import routerProductos from "./routes/productos.js"
+import routerCarrito from "./routes/carrito.js"
+import routerOrdenes from './routes/ordenes.js'
+//import routerChat from './routes/chat.js'
 
 //Middlewares
 import isAuth from "./routes/middlewares/isAuth.js"
@@ -33,10 +36,11 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 //#endregion ConfigApp
-
 app.use("/", routerLogin)
 app.use("/productos",isAuth.isAuth, routerProductos)
-//app.use('/carrito', routerCarrito)
+app.use('/carrito',isAuth.isAuth, routerCarrito)
+app.use('/ordenes', isAuth.isAuth, routerOrdenes)
+//app.use('/chat', isAuth.isAuth, routerChat)
 
 const PORT = config.PORT
 

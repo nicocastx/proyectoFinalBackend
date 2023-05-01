@@ -9,8 +9,8 @@ export default class CarritosRepo{
     return await this.dao.getCarritoPorEmail(email)
   }
 
-  async guardarCarrito(email, direccion){
-    return await this.dao.guardarCarrito(email, direccion)
+  async guardarCarrito(email){
+    return await this.dao.guardarCarrito(email)
   }
 
   async eliminarCarrito(email){

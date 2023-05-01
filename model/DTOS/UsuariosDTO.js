@@ -2,7 +2,7 @@ class UsuarioDTO{
   constructor({username, password, nombre, apellido, nroTelefono}){
     this.username = username
     this.password = password
-    this.nombreCompleto = nombre + apellido
+    this.nombreCompleto = nombre + " " + apellido
     this.nroTelefono = nroTelefono
   }
 }

@@ -11,7 +11,7 @@ const colSchema = Schema({
       cantidad: {type: Number}
     }
   ],
-  direccion: {type: String, required: true}
+  direccion: {type: String}
 })
 
 const modelCarritos = model(colName, colSchema)
