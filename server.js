@@ -52,6 +52,12 @@ app.use("/productos", isAuth.isAuth, routerProductos)
 app.use('/carrito', isAuth.isAuth, routerCarrito)
 app.use('/ordenes', isAuth.isAuth, routerOrdenes)
 app.use('/chat', isAuth.isAuth, routerChat)
+app.use((req, res) =>{
+  res.json({
+    error: -1,
+    description: "Ruta aun no implementada " + req.originalUrl,
+  });
+})
 
 const PORT = config.PORT
 

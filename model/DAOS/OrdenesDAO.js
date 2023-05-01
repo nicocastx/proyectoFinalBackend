@@ -44,7 +44,7 @@ export default class OrdenesDAO{
     }
     if(carritoValidado.direccion == ''){
       return {
-        error: 'Se debe definir una direccion de entrega para las ordenes'
+        error: 'Se debe definir una direccion de entrega para las ordenes, porfavor verifique en carrito'
       }
     }
 

@@ -8,6 +8,7 @@ import {Strategy as localStrategy} from 'passport-local'
 import bcrypt from 'bcrypt'
 import usuariosRepo from '../model/Repos/usuariosRepo.js'
 import nodemailer from './nodemailer.js'
+import logger from '../config/logger.js'
 
 const db = new usuariosRepo()
 
@@ -29,7 +30,7 @@ const registerStrategy = new localStrategy(
     const usuarios = await db.getUsuarios()
     const usuario = usuarios.find(user => user.username == username)
     if (usuario) {
-      console.log('El usuario registrado ya existe');
+      logger.info('El usuario registrado ya existe');
       return done(null, false)
     }
 
@@ -42,7 +43,7 @@ const registerStrategy = new localStrategy(
     }
 
     await db.agregarUsuario(newUser)
-    console.log('Se creo el usuario');
+    logger.info('Se creo el usuario');
     nodemailer.gmailRegistro(newUser)
     return done(null, newUser)
   })
@@ -53,12 +54,12 @@ const loginStrategy = new localStrategy(
     const usuario = usuarios.find(u => u.username == username)
 
     if (!usuario) {
-      console.log('No existe el usuario elegido');
+      logger.info('No existe el usuario elegido');
       return done(null, false)
     }
 
     if (!validPassword(usuario, password)) {
-      console.log('La contraseña es invalida, Intente Nuevamente');
+      logger.info('La contraseña es invalida, Intente Nuevamente');
       return done(null, false)
     }
 

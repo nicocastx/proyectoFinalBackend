@@ -1,6 +1,7 @@
 import mongoose from "mongoose"
 import productosModel from "../schemas/producto.js"
 import formatDTO from "../DTOS/productosDTO.js"
+import logger from "../../config/logger.js"
 
 export default class productosDAO {
   async getProductos() {
@@ -43,7 +44,7 @@ export default class productosDAO {
       }
       return formatDTO(productoModificado)
     } catch (error) {
-      console.log(error)
+      logger.warn(error)
       return {
         error: 'Ocurrio un error con la operacion, verifique datos cargados y el ID del producto'
       }
@@ -57,14 +58,14 @@ try {
     _id: mongoId
   })
   if (!productoBorrado) {
-    console.log(error)
+    logger.info(error)
     return {
       error: 'Ocurrio un error con la operacion, verifique datos cargados y el ID del producto'
     }
   }
   return formatDTO(productoBorrado)
 } catch (error) {
-  console.log(error)
+  logger.warn(error)
   return {
     error: 'Ocurrio un error con la operacion, verifique datos cargados y el ID del producto'
   }

@@ -1,6 +1,7 @@
 import modelCarritos from "../schemas/Carrito.js";
 import formatDTO from "../DTOS/CarritosDTO.js";
 import productosDAO from './ProductosDAO.js'
+import logger from "../../config/logger.js";
 
 export default class CarritosDAO {
   //metodos asociados al manejo del carrito
@@ -17,7 +18,7 @@ export default class CarritosDAO {
   async guardarCarrito(email) {
     const carrito = await this.getCarritoPorEmail(email)
     if (carrito.error == undefined) {
-      console.log('ya existe un carrito asociado a esa cuenta');
+      logger.info('ya existe un carrito asociado a esa cuenta');
       return carrito
     }
     const carritoGuardado = await modelCarritos.insertMany({
@@ -98,7 +99,6 @@ export default class CarritosDAO {
       email: email,
       'items.idItem': idItem
     }))[0]
-    console.log(carritoExisteItem);
     if(!carritoExisteItem){
       return {error: 'No se encontro el id de producto solicitado en ese carrito'}
     }

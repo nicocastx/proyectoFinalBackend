@@ -6,7 +6,7 @@ El proyecto esta basado en Node.JS, utilizando distintas metodologias aprendidas
 Yo soy Kevin Castillo, soy estudiante de ingenieria en sistemas y decidi dedicarme en mis tiempos libres a aprender un poco de programacion por mi cuenta, esta seria mi culminacion de la carrera que vengo llevando a cabo en CoderHouse sobre desarrollo en Backend
 
 ### Dependencias utilizadas
-
+- [winston](https://github.com/winstonjs/winston)
 - [bcrypt](https://www.npmjs.com/package/bcrypt)
 - [connect-mongo](https://www.npmjs.com/package/connect-mongo)
 - [dotenv](https://www.npmjs.com/package/dotenv)
