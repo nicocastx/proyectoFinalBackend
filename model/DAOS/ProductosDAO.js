@@ -1,5 +1,5 @@
 import mongoose from "mongoose"
-import productosModel from "../schemas/producto.js"
+import productosModel from "../schemas/Producto.js"
 import formatDTO from "../DTOS/productosDTO.js"
 import logger from "../../config/logger.js"
 
