@@ -132,4 +132,6 @@ Por si solo no recibe ningun parametro, pero requiere de que el carrito de un us
 #### get /
 Renderiza una pagina basica la cual muestra un chat desde el que se envia un mensaje por el chat, luego ese mensaje se guarda en la base de datos correspondiente con la informacion del usuario, la fecha de creacion, el tipo de usuario, si es un usuario o es un usuario correspondiente al sistema, todo esto manejado a traves de los sockets
 
+# Deploy en Railways
+https://proyectofinalbackend-production-c2fa.up.railway.app/
 
