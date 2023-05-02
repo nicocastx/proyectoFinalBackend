@@ -2,6 +2,7 @@
 import express from "express"
 import config from './config/config.js'
 import { engine as exphbs } from "express-handlebars"
+import cookieParser from "cookie-parser"
 
 //manejo de sesiones
 import passport from 'passport'
@@ -42,6 +43,7 @@ app.use(express.urlencoded({ extended: true }))
 app.engine(`.hbs`, exphbs({ extname: `.hbs`, defaultLayout: `main.hbs` }))
 app.set(`view engine`, `hbs`)
 
+app.use(cookieParser())
 app.use(sessionconfig)
 app.use(passport.initialize())
 app.use(passport.session())

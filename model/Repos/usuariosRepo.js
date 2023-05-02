@@ -12,4 +12,8 @@ export default class usuariosRepo{
   async agregarUsuario(user){
     return await this.dao.agregarUsuario(user)
   }
+
+  async getUsuarioPorEmail(email){
+    return await this.dao.getUsuarioPorEmail(email)
+  }
 }

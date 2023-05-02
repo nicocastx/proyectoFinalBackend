@@ -1,6 +1,7 @@
 import nodemailer from 'nodemailer'
 import config from '../config/config.js';
 import productosRepo from '../model/Repos/productosRepo.js';
+import logger from '../config/logger.js';
 
 const dbProductos = new productosRepo()
 
@@ -14,6 +15,16 @@ function mostrarOrden(productosDeOrden){
     <br>
     `})
   return ordenFormato
+}
+
+function mostrarUsuario(usuario){
+  return `
+  <p>Email: ${usuario.username}</p>
+  <p>Nombre: ${usuario.nombre}</p>
+  <p>Apellido: ${usuario.apellido}</p>
+  <p>Numero de telefono: ${usuario.nroTelefono}</p>
+  <p>Enlace a imagen de avatar: ${usuario.urlAvatar}</p>
+  `
 }
 
 function calcularTotal(productosDeOrden){
@@ -40,14 +51,14 @@ async function gmailRegistro(newUser) {
     subject: `nuevo registro`,
     html: `<h1>AVISO: Se ha registrado un nuevo usuario</h1>
   <h2>El usuario registrado recientemente ha presentado los siguientes datos:</h2>
-  <p>${JSON.stringify(newUser)}</p>
+  <p>${mostrarUsuario(newUser)}</p>
   `,
   }
 
   transporter
     .sendMail(contenido)
     .catch((err) => {
-      console.log(err);
+      logger.error(err);
     });
 }
 
@@ -77,7 +88,7 @@ async function gmailOrden(user, orden) {
   transporter
     .sendMail(contenido)
     .catch((err) => {
-      console.log(err);
+      logger.error(err);
     });
 }
 

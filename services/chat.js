@@ -8,7 +8,6 @@ async function getMensajes(){
 }
 
 async function guardarMensaje(email, mensaje){
-  console.log(mensaje);
   const mensajeGuardado = await db.guardarMensaje(email, mensaje)
   return mensajeGuardado
 }

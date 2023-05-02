@@ -9,8 +9,10 @@ import bcrypt from 'bcrypt'
 import usuariosRepo from '../model/Repos/usuariosRepo.js'
 import nodemailer from './nodemailer.js'
 import logger from '../config/logger.js'
+import carritosRepo from '../model/Repos/carritosRepo.js'
 
 const db = new usuariosRepo()
+const dbCarts = new carritosRepo()
 
 //function BCrypt
 function createHash(password){
@@ -50,9 +52,10 @@ const registerStrategy = new localStrategy(
       urlAvatar: pathFile
     }
 
-    await db.agregarUsuario(newUser)
+    const usuarioGuardado = await db.agregarUsuario(newUser)
     logger.info('Se creo el usuario');
     nodemailer.gmailRegistro(newUser)
+    await dbCarts.guardarCarrito(usuarioGuardado.username)
     return done(null, newUser)
   })
 

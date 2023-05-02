@@ -15,6 +15,11 @@ class UsuariosDAO{
       logger.warn(error)
     }
   }
+
+  async getUsuarioPorEmail(email){
+    const usuario = (await usuariosModel.find({username: email}))[0]
+    return formatDTO(usuario)
+  }
 }
 
 export default UsuariosDAO
