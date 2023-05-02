@@ -1,3 +1,11 @@
+<h1 align="center">
+  <span style="color:#D7385E;">Instrumenty</span> 🎵🛍️
+</h1>
+
+<p align="center">
+  Un proyecto orientado a backend pensado como entrega final para el cursado del curso de Coderhouse de Backend
+</p>
+
 ### Descripcion
 Bienvenido a mi proyecto final del Curso de coderhouse sobre Backend, en donde desarrollo la parte del backend para un Ecommerce, en este caso, mi inspiracion para ello fue construirlo sobre una pagina de instrumentos, donde utilizo distintas herramientas para llevar a cabo su construccion
 El proyecto esta basado en Node.JS, utilizando distintas metodologias aprendidas dentro del cursado de Backend en Coderhouse
