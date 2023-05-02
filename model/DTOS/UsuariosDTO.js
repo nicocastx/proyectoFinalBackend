@@ -1,9 +1,10 @@
 class UsuarioDTO{
-  constructor({username, password, nombre, apellido, nroTelefono}){
+  constructor({username, password, nombre, apellido, nroTelefono, urlAvatar}){
     this.username = username
     this.password = password
     this.nombreCompleto = nombre + " " + apellido
     this.nroTelefono = nroTelefono
+    this.urlAvatar = urlAvatar
   }
 }
 

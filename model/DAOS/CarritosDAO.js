@@ -31,7 +31,11 @@ export default class CarritosDAO {
   }
 
   async eliminarCarrito(email) {
-    const carritoEliminado = await modelCarritos.deleteOne({ email: email })
+    const carritoEliminado = await modelCarritos.updateOne({ email: email },{
+      items: [],
+      fechaHoraCreacion: new Date().toLocaleString(),
+      direccion: ''
+    })
     if (!carritoEliminado) {
       return false
     }

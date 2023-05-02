@@ -7,7 +7,8 @@ const colSchema = Schema({
   password: {type: String, required: true},
   nombre: {type: String},
   apellido: {type: String, required: true},
-  nroTelefono: {type: String, required: true}
+  nroTelefono: {type: String, required: true},
+  urlAvatar: {type: String}
 })
 
 const usuariosModel = model(colName, colSchema)

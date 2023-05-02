@@ -8,8 +8,12 @@ class UsuariosDAO{
   }
 
   async agregarUsuario(newUser){
-    let usuarioAgregado = await usuariosModel.insertMany(newUser)
-    return formatDTO(usuarioAgregado[0])
+    try {
+      let usuarioAgregado = await usuariosModel.insertMany(newUser)
+      return formatDTO(usuarioAgregado[0])
+    } catch (error) {
+      logger.warn(error)
+    }
   }
 }
 

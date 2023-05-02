@@ -1,0 +1,46 @@
+<div class="card" style="border-radius: 15px;">
+  <div class="card-body p-5">
+    <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+    <form class="form" action="register" method="post" enctype="multipart/form-data" role="form">
+
+      <div class="form-outline mb-4">
+        <input type="email" id="username" name="username" class="form-control form-control-lg" required />
+        <label class="form-label" for="username">Tu Email</label>
+      </div>
+
+      <div class="form-outline mb-4">
+        <input type="password" id="password" name="password" class="form-control form-control-lg" required />
+        <label class="form-label" for="password">Ingresa tu contraseña</label>
+      </div>
+
+      <div class="form-outline mb-4">
+        <input type="text" id="nombre" name="nombre" class="form-control form-control-lg" required />
+        <label class="form-label" for="nombre">Ingresa tu nombre</label>
+      </div>
+
+      <div class="form-outline mb-4">
+        <input type="text" id="apellido" name="apellido" class="form-control form-control-lg" required />
+        <label class="form-label" for="apellido">Ingresa tu Apellido</label>
+      </div>
+
+      <div class="form-outline mb-4">
+        <input type="tel" id="nroTelefono" name="nroTelefono" class="form-control form-control-lg" required />
+        <label class="form-label" for="nroTelefono">Ingresa tu numero de telefono, completo con codigo de area</label>
+      </div>
+
+      <div class="form-outline mb-4">
+        <input type="file" id="avatar" name="avatar" class="form-control form-control-lg" required />
+        <label class="form-label" for="avatar">Ingrese la imagen de un avatar, si asi lo prefiere</label>
+      </div>
+
+      <div class="d-flex justify-content-center">
+        <input type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" value="Registrarse" />
+      </div>
+
+    </form>
+
+    <p class="text-center text-muted mt-5 mb-0">Ya tienes una cuenta? <a href="/" class="fw-bold text-body"><u>Inicia
+          sesion aqui</u></a></p>
+
+  </div>
+</div>

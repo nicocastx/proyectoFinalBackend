@@ -34,12 +34,20 @@ const registerStrategy = new localStrategy(
       return done(null, false)
     }
 
+    let pathFile = "";
+    if (req.file) {
+      pathFile = "/avatars/" + req.file.filename;
+    } else {
+      logger.warn("No se ha subido una foto de avatar a los datos");
+    }
+
     const newUser = {
       username: username,
       password: createHash(password),
       nombre: req.body.nombre,
       apellido: req.body.apellido,
-      nroTelefono: req.body.nroTelefono
+      nroTelefono: req.body.nroTelefono,
+      urlAvatar: pathFile
     }
 
     await db.agregarUsuario(newUser)

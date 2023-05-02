@@ -1,4 +1,5 @@
 import service from '../services/login.js'
+import multerUsuarios from '../services/uploads/multerUsuarios.js'
 
 async function getLogin(req, res) {
   res.render("login")
@@ -12,6 +13,8 @@ async function getRegister(req, res) {
 
 const register = service.register
 
+const guardarImgUsuario = multerUsuarios.single('avatar')
+
 async function logout(req, res) {
   req.session.destroy()
   res.json({
@@ -24,5 +27,6 @@ export default {
   login,
   getRegister,
   register,
-  logout
+  logout,
+  guardarImgUsuario
 }

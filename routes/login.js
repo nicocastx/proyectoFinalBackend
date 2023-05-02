@@ -9,7 +9,7 @@ router.post('/', controller.login)
 
 router.get('/register', controller.getRegister)
 
-router.post('/register', controller.register)
+router.post('/register', controller.guardarImgUsuario, controller.register)
 
 router.get('/logout', controller.logout)
 
